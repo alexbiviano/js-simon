@@ -20,7 +20,7 @@ console.log(userNumbers);
 
 // con due cicli for controllo gli elementi di due array
 
-let result = [] 
+let result = []
 
 for(let i=0; i<randomNumbers.length; i++){
     for(let y=0; y<userNumbers.length; y++){
