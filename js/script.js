@@ -1,4 +1,4 @@
-// creo un ciclo for per creare 5 numeri casuali che inserisco dentro un'array
+// creo un ciclo for per creare 5 numeri casuali che inserisco dentro un'array 
 
 let randomNumbers = []
 
