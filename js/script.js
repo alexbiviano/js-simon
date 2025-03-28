@@ -1,4 +1,3 @@
-// elementi DOM e variabili
 
 let seconds = 31; //tempo disponibile per memorizzare i numeri
 let randomNumbers = []
@@ -22,32 +21,29 @@ for(let i=0; i<5; i++){
 
 console.log(randomNumbers);
 
-//prendo i risultati del form quando premo il bottone
+
 
 button.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    //ottengo i valori degli input e li pusho dentro l'array userNumbers
+    event.preventDefault(); ers
 
     for(let i=0; i<inputGroup.length; i++){
         userNumbers.push(parseInt(inputGroup[i].value));
     }
     console.log(userNumbers);
 
-    // con due cicli for controllo gli elementi di due array, il risultato deve contenere solo i numeri dell'utente che sono uguali a quelli generati
+  
 
     for(let i=0; i<randomNumbers.length; i++){
         for(let y=0; y<userNumbers.length; y++){
             if (randomNumbers[i] === userNumbers[y]){
                 result.push(userNumbers[y]);
-                //vado a rimuovere i risultati nella posizione [i] della array randomNumbers cosi facendo semplifico quando vado a comparare result e randomNumbers
                 randomNumbers.splice([i], 1);
                 console.log(randomNumbers);
             }
         }
     }
 
-    //inserisco il risultato nel DOM e scrivo 3 messaggi differenti in base al risultato
+  
     if(result.length == 5){
         message.classList.add("text-success")
         message.classList.remove("text-danger")
@@ -65,14 +61,14 @@ button.addEventListener("click", (event) => {
 //inserisco nel DOM la lista con i numeri da memorizzare
 numberList.innerHTML = `<li>${randomNumbers}</li>`;
 
-// con setInterval decremento la variabile seconds di 1 ogni secondo
+
 let timer = setInterval(function(){
     seconds--
     // e vado a trasferire il valore in html
     countdown.innerText = seconds
 },1000);
 
-// con setTimeout e clearInterval fermo la variabile seconds prima che scenda sotto lo zero
+
 setTimeout(function(){
     clearInterval(timer)
     numberList.classList.add("d-none");
